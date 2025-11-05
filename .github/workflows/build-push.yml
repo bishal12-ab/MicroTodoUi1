@@ -24,10 +24,7 @@ jobs:
       - name: Azure Login
         uses: Azure/login@v2.3.0
         with:
-          client-id: bab0bf37-a01d-4ab3-a8f1-917213c7a25c
-          tenant-id: 09896521-398e-4aaf-ad0c-71324d0d8899
-          subscription-id: a4103c11-dd30-480e-aa10-f78d73acbc66
-
+         creds: ${{ secrets.AZURE_CREDENTIALS }}
       - name: Log in to ACR
         run: |
           az acr login --name $ACR_NAME
